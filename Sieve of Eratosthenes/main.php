@@ -46,7 +46,7 @@ function getPrimesInRange($min = 2, $max = 1000)
 		$primes[$i] = $i;
 	
 	// Enumerate every integer from the min value up to the square root of the max
-	for ($i = $min; $i < sqrt($max); $i++)
+	for ($i = 2; $i < sqrt($max); $i++)
 	{
 		// Start with the square of the step, then continuosly increment the previous  
 		// value by the step size since the sequence is:
