@@ -18,7 +18,7 @@ function getPrimesInRange(min, max)
     {
         throw "min value cannot be less than 2.";
     }
-    if (min > max)
+    if (min >= max)
     {
         throw "max value must be greater than min value.";
     }

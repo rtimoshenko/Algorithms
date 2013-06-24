@@ -34,7 +34,7 @@ function assert_handler($file, $line, $code)
 function getPrimesInRange($min = 2, $max = 1000)
 {
 	assert('$min > 1  /* $min value cannot be less than 2 */');
-	assert('$max > $min  /* $min value must be greater than $max value */');
+	assert('$max >= $min  /* $min value must be greater than $max value */');
 	
 	// Implementation of Sieve of Eratosthenes
 	// http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
