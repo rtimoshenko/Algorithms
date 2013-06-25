@@ -33,6 +33,7 @@ function assert_handler($file, $line, $code)
 */
 function getPrimesInRange($min = 2, $max = 1000)
 {
+	// Integrity check
 	assert('$min > 1  /* $min value cannot be less than 2 */');
 	assert('$max >= $min  /* $min value must be greater than $max value */');
 	
@@ -41,7 +42,7 @@ function getPrimesInRange($min = 2, $max = 1000)
 	
 	$primes = array();
 	
-	// Populate with all integers initially
+	// Populate with all integers in range, initially
 	for ($i = $min; $i < $max; $i++)
 	{
 		$primes[$i] = $i;
