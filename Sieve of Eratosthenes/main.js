@@ -12,7 +12,7 @@
 function getPrimesInRange(min, max)
 {
     "use strict";
-    
+
     // Integrity checking
     if (min < 2)
     {
@@ -22,10 +22,10 @@ function getPrimesInRange(min, max)
     {
         throw "max value must be greater than min value.";
     }
-        
+
     // Implementation of Sieve of Eratosthenes
     // http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-    
+
     var i, j,
         ints = [],
         primes = [];
@@ -33,11 +33,11 @@ function getPrimesInRange(min, max)
     // Initialize the integer array
     for (i = min; i < max; i++)
     {
-        ints[i] = i;
+        ints[i - min + 2] = i;
     }
 
     // Enumerate every integer from 2 up to the square root of the max
-    for (i = 2; i < Math.sqrt(max); i++)
+    for (i = 2; i < Math.sqrt(max) ; i++)
     {
         // If the value at the current index is null (i.e., it's not a prime)
         // then we already checked it when we enumerated smaller integers and it can be skipped
@@ -54,12 +54,12 @@ function getPrimesInRange(min, max)
             }
         }
     }
-    
+
     // At this point the sieve is complete, but since we want an array result,
     // we enumerate the integers again and push the primes to our result array
-    for (i = min; i < max; i++)
+    for (i = 0; i < ints.length; i++)
     {
-        if (ints[i] !== null)
+        if (ints[i] !== null && ints[i] > min)
         {
             primes.push(ints[i]);
         }

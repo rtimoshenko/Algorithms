@@ -31,7 +31,7 @@ function assert_handler($file, $line, $code)
 /*
 * Return an array of prime numbers between the passed $min and $max range
 */
-function getPrimesInRange($min = 2, $max = 1000)
+function getPrimesInRange($min, $max)
 {
 	// Integrity check
 	assert('$min > 1  /* $min value cannot be less than 2 */');
@@ -45,7 +45,7 @@ function getPrimesInRange($min = 2, $max = 1000)
 	// Populate with all integers in range, initially
 	for ($i = $min; $i < $max; $i++)
 	{
-		$primes[$i] = $i;
+		$primes[$i - $min + 2] = $i;
 	}
 		
 	// Enumerate every integer from 2 up to the square root of the max
@@ -66,8 +66,15 @@ function getPrimesInRange($min = 2, $max = 1000)
 			}
 		}
 	}
+
+	// Since we want all of the values within the range, we don't want
+	// to return the min value
+	if (reset($primes) == $min)
+	{
+		unset($primes[key($primes)]);
+	}
 	
-	return $primes;
+	return array_values($primes);
 }
 
 // OUTPUT

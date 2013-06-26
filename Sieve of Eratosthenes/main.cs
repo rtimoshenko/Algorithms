@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* =================================
+ *
+ * 	Ronald Timoshenko | ronaldtimoshenko.com
+ * 	2013-06-25
+ *
+ * ================================= */
+
+using System;
 
 public class Main
 {
@@ -23,7 +30,7 @@ public class Main
 		// Populate ints array with all integers in range, initially
 	    for (i = min; i < max; i++)
 	    {
-		    ints[i] = i;
+		    ints[i - min + 2] = i;
 	    }
 	
 		// Enumerate every integer from 2 up to the square root of the max
@@ -46,10 +53,10 @@ public class Main
 	    }
 	
 	    // At this point the sieve is complete, but since we want an array result,
-	    // we enumerate the integers again and yield the resulting integers
+	    // we enumerate the integers again and yield the primes
 	    foreach (var n in ints)
 	    {
-		    if (n != null)
+		    if (n != null && n > min)
 		    {
 			    yield return (int)n;
 		    }
