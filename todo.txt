@@ -1,5 +1,6 @@
 TODO:
 ==============================
 Merge Sort
+Counting Sort
 Binary Search
 Towers of Hanoi?
