@@ -1,13 +1,12 @@
-//
-//  Main.h
-//  
-//
-//  Created by Ronald Timoshenko on 6/28/13.
-//
-//
+/* =================================
+ *
+ *  Ronald Timoshenko | ronaldtimoshenko.com
+ *  2013-06-28
+ *
+ * ================================= */
 
 @interface Main : NSObject
 
--(NSMutableArray *) primesInRange:(int)min withMax:(int)max;
+- (NSArray *) primesInRangeWithMin:(int)min withMax:(int)max;
 
 @end
