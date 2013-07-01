@@ -41,6 +41,10 @@ function getPrimesInRange($min, $max)
     // http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
     
     $primes = array();
+
+    // Odd numbers throw off the initial array index enumeration, 
+    // so we subtract one for the initial loop
+    $min = ($min % 2 == 0) ? $min : $min - 1;
     
     // Populate with all integers in range, initially
     for ($i = $min; $i < $max; $i++)

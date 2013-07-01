@@ -27,8 +27,13 @@ function getPrimesInRange(min, max)
     // http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
     var i, j,
+        originalMin = min,
         ints = [],
         primes = [];
+    
+    // Odd numbers throw off the initial array index enumeration, 
+    // so we subtract one for the initial loop
+    min = (min % 2 === 0) ? min : min - 1;
 
     // Initialize the integer array
     for (i = min; i < max; i++)
@@ -59,7 +64,7 @@ function getPrimesInRange(min, max)
     // we enumerate the integers again and push the primes to our result array
     for (i = 0; i < ints.length; i++)
     {
-        if (ints[i] !== null && ints[i] > min)
+        if (ints[i] !== null && ints[i] > originalMin)
         {
             primes.push(ints[i]);
         }

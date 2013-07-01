@@ -25,7 +25,12 @@ public class Main
     
         // Initialize nullable integer array with length of max
         var ints = new int?[max];
-        int i, j;
+        int i, j, originalMin;
+
+        // Odd numbers throw off the initial array index enumeration, 
+        // so we subtract one for the initial loop
+        originalMin = min;
+        min = (min % 2 == 0) ? min : min - 1;
     
         // Populate ints array with all integers in range, initially
         for (i = min; i < max; i++)
@@ -56,7 +61,7 @@ public class Main
         // we enumerate the integers again and yield the primes
         foreach (var n in ints)
         {
-            if (n != null && n > min)
+            if (n != null && n > originalMin)
             {
                 yield return (int)n;
             }

@@ -33,7 +33,8 @@
     
     int i, j;
     
-    // Odd numbers throw off the array index enumeration, so we subtract one for the loop
+    // Odd numbers throw off the initial array index enumeration, 
+    // so we subtract one for the initial loop
     int originalMin = min;
     min = (min % 2 == 0) ? min : min - 1;
     
