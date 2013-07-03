@@ -3,4 +3,6 @@ TODO:
 Merge Sort
 Counting Sort
 Binary Search
+k-nearest neighbor?
+genetic/evolutionary algorithms?
 Towers of Hanoi?
